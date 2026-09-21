@@ -1,0 +1,229 @@
+{
+  "project_name": "RenovaLife Dialysis Center",
+  "app_type": "landing_page",
+  "tagline": "Renewing Lives. Restoring Hope. Delivering Quality Care.",
+  "location": "Angeles City, Pampanga, Philippines",
+  "design_archetype": "Organic & Earthy Healthcare Warmth meets Avant-Garde Editorial Precision (Awwwards-Level)",
+  "art_direction": {
+    "concept": "The Anti-Clinical Healing Sanctuary — bridging cutting-edge renal medicine with warm human compassion through Swiss typography, kinetic reveal animations, soft tactile textures, and generous asymmetric breathing room.",
+    "theme_mode": "Light Warm Silk base (#FAFAF7) with Midnight Tidal Teal contrast (#0B1E22) and vibrant Sage/Cerulean micro-accents.",
+    "signature_moments": [
+      "Hero kinetic masked line-by-line reveal using Framer Motion",
+      "Numbered Editorial Manifesto chapters with progress tracking",
+      "Ultra-slow organic marquee tape displaying core values",
+      "Interactive 3D Vital Flow Canvas / Organic mesh wave sphere",
+      "High-density Bento Tetris grid for the 5 key renal services",
+      "Smooth momentum scrolling integration using Lenis"
+    ]
+  },
+  "typography": {
+    "heading_font": "Cormorant Garamond, serif (or Outfit / Playfair Display)",
+    "body_font": "Plus Jakarta Sans, sans-serif (or Manrope)",
+    "accent_mono": "JetBrains Mono, monospace",
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08]",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight leading-[1.15]",
+      "h3": "text-xl sm:text-2xl font-medium tracking-normal leading-snug",
+      "h4": "text-lg sm:text-xl font-medium leading-normal",
+      "overline": "font-mono text-xs uppercase tracking-[0.2em] text-teal-700 font-semibold",
+      "body": "text-base leading-relaxed text-slate-700",
+      "small": "text-sm text-slate-500 leading-normal"
+    }
+  },
+  "colors": {
+    "background_light": "#FAFAF7",
+    "background_dark": "#0B1E22",
+    "surface_card": "#FFFFFF",
+    "surface_tint": "#F0F7F7",
+    "primary_teal": "#0E4B56",
+    "primary_hover": "#0A3942",
+    "secondary_soft_blue": "#007791",
+    "secondary_light_blue": "#EAF3F7",
+    "accent_sage": "#2E8B57",
+    "accent_sage_light": "#D8EFE4",
+    "text_main": "#11191B",
+    "text_muted": "#526468",
+    "border_subtle": "#E2E8E8",
+    "border_accent": "#0E4B56"
+  },
+  "image_urls": {
+    "hero_dialysis_facility": "https://images.unsplash.com/photo-1742436598939-f5cd30ba7827?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBtZWRpY2FsJTIwZGlhbHlzaXMlMjBjbGluaWMlMjBpbnRlcmlvciUyMG51cnNpbmd8ZW58MHx8fHwxNzg5OTk1ODAxfDA&ixlib=rb-4.1.0&q=85",
+    "patient_care_doctor": "https://images.unsplash.com/photo-1584516150909-c43483ee7932?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHw0fHxjb21wYXNzaW9uYXRlJTIwZG9jdG9yJTIwbWVkaWNhbCUyMHBhdGllbnQlMjBjYXJlJTIwY2xpbmljfGVufDB8fHx8MTc4OTk5NTgwMXww&ixlib=rb-4.1.0&q=85",
+    "doctor_consultation": "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHxfHxjb21wYXNzaW9uYXRlJTIwZG9jdG9yJTIwbWVkaWNhbCUyMHBhdGllbnQlMjBjYXJlJTIwY2xpbmljfGVufDB8fHx8MTc4OTk5NTgwMXww&ixlib=rb-4.1.0&q=85",
+    "clinic_infusion_chairs": "https://images.pexels.com/photos/33216690/pexels-photo-33216690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "medical_equipment_room": "https://images.pexels.com/photos/8460234/pexels-photo-8460234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "lead_nephrologist_female": "https://images.pexels.com/photos/32115905/pexels-photo-32115905.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "senior_physician_female": "https://images.pexels.com/photos/32254665/pexels-photo-32254665.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "compassionate_nurse": "https://images.pexels.com/photos/5206916/pexels-photo-5206916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "grid_layout_strategy": {
+    "mode": "Bento Tetris Grid Mode A & High Density Mode B",
+    "gap": "gap-6 md:gap-8 lg:gap-10",
+    "services_bento": {
+      "card_1_hemodialysis": "col-span-1 md:col-span-8 row-span-2",
+      "card_2_renal_support": "col-span-1 md:col-span-4 row-span-1",
+      "card_3_family_support": "col-span-1 md:col-span-4 row-span-1",
+      "card_4_referral": "col-span-1 md:col-span-6 row-span-1",
+      "card_5_quality_safety": "col-span-1 md:col-span-6 row-span-1"
+    }
+  },
+  "sections_breakdown": [
+    {
+      "section_id": "nav-header",
+      "name": "Navigation Bar",
+      "type": "sticky_crystal_glass",
+      "features": [
+        "Brand identity with leaf/vitality symbol",
+        "Pill status badge: 'Angeles City Facility • Open Today 6:00 AM - 9:00 PM'",
+        "Desktop Nav items: Services, Why RenovaLife, Manifesto, Facility, Team, FAQ",
+        "Primary CTA button: 'Schedule a Visit / Consultation' with hover micro-glow",
+        "Emergency hotline badge: '(045) 888-RENAL / PhilHealth Direct Access'"
+      ]
+    },
+    {
+      "section_id": "hero",
+      "name": "Kinetic Hero Section",
+      "type": "awwwards_kinetic_hero",
+      "features": [
+        "Masked line-by-line reveal animation for H1 ('Renewing Lives. Restoring Hope. Delivering World-Class Renal Care.')",
+        "Asymmetric split: Left editorial copy & key highlights, Right interactive 3D/Canvas Vitality Flow sphere",
+        "Floating trust markers: '100% PhilHealth Accredited', 'Zero-Infection Protocol Safety Standard', '24+ State-of-the-Art Dialysis Stations'",
+        "Dual action CTAs: 'Book Appointment' & 'Virtual Tour of Facility'"
+      ]
+    },
+    {
+      "section_id": "marquee",
+      "name": "Slow Editorial Ribbon Marquee",
+      "type": "react_fast_marquee",
+      "features": [
+        "Ultra-slow drifting text string with low-contrast warm sage background",
+        "Text phrase: 'COMPASSIONATE DIALYSIS CARE • ANGELES CITY • STATE-OF-THE-ART ULTRA-PURE WATER FILTRATION • PHILHEALTH ACCREDITED • INDIVIDUAL PRIVATE ENTERTAINMENT PODS • HUMAN-CENTERED HEALING'"
+      ]
+    },
+    {
+      "section_id": "manifesto",
+      "name": "Numbered Manifesto Chapters",
+      "type": "editorial_chapters",
+      "features": [
+        "Chapter 01: 'The Sanctuary of Life' - Moving away from scary hospital wards to human-first comfort.",
+        "Chapter 02: 'Uncompromised Purity' - German-engineered ultra-pure water purification systems guaranteeing zero endotoxins.",
+        "Chapter 03: 'Whole-Family Support' - Empowering dialysis patients and their families with nutrition, mental health, and financial guidance."
+      ]
+    },
+    {
+      "section_id": "services",
+      "name": "5-Card Bento Services Grid",
+      "type": "tetris_grid",
+      "items": [
+        "Hemodialysis Care (High-flux dialysis with personalized Kt/V targets)",
+        "Renal Care Support (Nephrology consultations, anemia & bone mineral management)",
+        "Patient & Family Support (Renal dietetics, psychosocial counseling, PhilHealth assistance)",
+        "Referral Coordination (Seamless hospital transfer & vascular access surgery routing)",
+        "Quality & Safety Assurance (Strict infection control, dual power redundancy, emergency backup)"
+      ]
+    },
+    {
+      "section_id": "why-renovalife",
+      "name": "Why RenovaLife (Differentiators)",
+      "type": "asymmetric_feature_split",
+      "features": [
+        "Ergonomic automated reclining therapy chairs with built-in massage & heat support",
+        "Personalized Smart Entertainment displays (Netflix, Spotify, TV) at every station",
+        "Complimentary high-speed Wi-Fi and quiet workspaces for working patients",
+        "On-site Board-Certified Nephrologist present during all treatment shifts",
+        "Specialized nutrition bar providing customized dialysis-friendly refreshments"
+      ]
+    },
+    {
+      "section_id": "about-mission",
+      "name": "About / Mission, Vision & Core Values",
+      "type": "tabbed_editorial_cards",
+      "features": [
+        "Interactive tabbed view: Mission • Vision • Core Values (Integrity, Empathy, Innovation, Safety)",
+        "Story of RenovaLife in Angeles City: Founded to provide world-class renal care without the financial or emotional stress."
+      ]
+    },
+    {
+      "section_id": "facility-showcase",
+      "name": "Interactive Facility Showcase",
+      "type": "gallery_modal_viewer",
+      "features": [
+        "High-definition spotlight image cards showing dialysis floor, water treatment unit, reception lounge, and private isolation room",
+        "Technical specs breakdown (Double-Pass Reverse Osmosis Water System, HEPA air purification)"
+      ]
+    },
+    {
+      "section_id": "team",
+      "name": "Medical Leadership & Care Team",
+      "type": "profile_cards",
+      "features": [
+        "Dr. Maria Elena Santos, MD, FPCP, FPSN — Head Nephrologist",
+        "Dr. Gabriel Reyes, MD — Vascular Access & Renal Care Specialist",
+        "Nurse Supervisor Clarissa Pangilinan, RN, BSN — Senior Hemodialysis Nurse",
+        "Credentials, years of experience, and warm patient-first ethos quotes"
+      ]
+    },
+    {
+      "section_id": "testimonials",
+      "name": "Patient & Family Testimonials",
+      "type": "editorial_quote_slider",
+      "features": [
+        "Real patient transformation stories from Pampanga residents",
+        "Ratings, verified PhilHealth patient badges, and warm personal quotes"
+      ]
+    },
+    {
+      "section_id": "resources-faq",
+      "name": "Patient Resources & FAQ Accordion",
+      "type": "shadcn_accordion",
+      "features": [
+        "Searchable FAQ categories: PhilHealth Coverage, First-Time Dialysis, Vascular Access Care, Scheduling",
+        "Downloadable patient handbook & renal dietary guide callout card"
+      ]
+    },
+    {
+      "section_id": "appointment-form",
+      "name": "Appointment & Consultation Form",
+      "type": "interactive_booking_card",
+      "features": [
+        "Patient name, phone number, email, shift preference (Morning / Afternoon / Evening)",
+        "Treatment type selector (Regular Dialysis, First-Time Evaluation, PhilHealth Inquiry, Transfer Patient)",
+        "Interactive date picker using Shadcn calendar",
+        "Instant confirmation toast using Sonner and automated booking receipt preview"
+      ]
+    },
+    {
+      "section_id": "footer",
+      "name": "Editorial Footer & Map Information",
+      "type": "dark_editorial_footer",
+      "features": [
+        "Address: MacArthur Highway, Angeles City, Pampanga, Philippines",
+        "Direct Contact: +63 (045) 888-7362 / info@renovalifedialysis.ph",
+        "PhilHealth accreditation badge & DOH License information",
+        "Emergency hotline emphasis banner",
+        "Quick navigation links & copyright statement"
+      ]
+    }
+  ],
+  "motion_philosophy": {
+    "libraries": ["framer-motion", "lenis"],
+    "smooth_scroll": "Lenis smooth momentum scroll enabled on root window",
+    "animations": {
+      "stagger_children": "staggerChildren: 0.1s, delayChildren: 0.2s",
+      "scroll_reveal": "whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 30 }} transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1.0] }}",
+      "hover_lift": "whileHover={{ y: -6, transition: { duration: 0.25 } }}"
+    }
+  },
+  "testing_and_accessibility": {
+    "data_testid_convention": "All interactive elements, buttons, inputs, tabs, accordions, and cards must have kebab-case data-testid attributes (e.g., data-testid='hero-book-appointment-button', data-testid='service-card-hemodialysis', data-testid='faq-accordion-item-1').",
+    "apca_contrast": "All text combinations strictly maintain minimum 4.5:1 contrast against backgrounds.",
+    "keyboard_focus": "Explicit focus ring states on form controls and links."
+  },
+  "instructions_to_main_agent": [
+    "Build a stunning single-page immersive website for RenovaLife Dialysis Center in React using Tailwind CSS and Framer Motion.",
+    "Implement Lenis smooth scrolling for luxury momentum feel.",
+    "Ensure all sections, images from guidelines, and interactive features (such as appointment booking, FAQ accordion, tabbed mission, service bento grid) are richly rendered with micro-animations.",
+    "Attach data-testid attributes to all interactive elements for test compliance.",
+    "Use sonner for instant toast notifications upon submitting the appointment form."
+  ]
+}
