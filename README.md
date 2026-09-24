@@ -36,12 +36,12 @@ Because GitHub Pages is HTTPS-only, a backend used with it must also be served o
 
 The build is static-host ready (`homepage: "."` in `package.json`, no client-side routing, no platform trackers outside Emergent domains).
 
-**Automated** — a ready workflow lives at `.github/workflows/deploy-pages.yml`:
+**Automated** — a ready workflow lives at `.github/workflows/deploy-pages.yml` (it auto-detects whether your repo root is the app root with `frontend/` inside, or the frontend files directly):
 
-1. Push the repo to GitHub.
-2. Repo → **Settings → Pages → Source: GitHub Actions**.
-3. Optional: add secret `REACT_APP_BACKEND_URL` (your VPS API URL) under **Settings → Secrets and variables → Actions**. Leave it absent for the email-fallback mode.
-4. Push to `main` — the site publishes to `https://<user>.github.io/<repo>/`.
+1. Push the repo to GitHub — make sure the hidden `.github/` folder is included.
+2. Repo → **Settings → Pages → Source: GitHub Actions** (required, or the deploy job fails).
+3. Optional: add secret `REACT_APP_BACKEND_URL` (your VPS API URL) under **Settings → Secrets and variables → Actions**. Leave it unset for the email-fallback mode.
+4. Push to `main` or `master` — the site publishes to `https://<user>.github.io/<repo>/`.
 
 **Manual**:
 

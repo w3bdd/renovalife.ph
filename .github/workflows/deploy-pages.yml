@@ -2,7 +2,7 @@ name: Deploy frontend to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
   workflow_dispatch:
 
 permissions:
@@ -19,29 +19,43 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Works whether the repo root is the app root (contains frontend/)
+      # or the frontend files directly (package.json at root).
+      - name: Locate frontend directory
+        id: fe
+        run: |
+          if [ -f frontend/package.json ]; then
+            echo "dir=frontend" >> "$GITHUB_OUTPUT"
+          elif [ -f package.json ]; then
+            echo "dir=." >> "$GITHUB_OUTPUT"
+          else
+            echo "::error::Could not find package.json in repo root or frontend/"
+            exit 1
+          fi
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: yarn
-          cache-dependency-path: frontend/yarn.lock
 
       - name: Install dependencies
-        working-directory: frontend
-        run: yarn install --frozen-lockfile
+        working-directory: ${{ steps.fe.outputs.dir }}
+        run: yarn install
 
       # REACT_APP_BACKEND_URL points the appointment form at your VPS API.
       # Add it under: repo Settings -> Secrets and variables -> Actions.
-      # Leave the secret empty for a static-only deploy (form falls back to email).
+      # Leave the secret unset for a static-only deploy (form falls back to email).
       - name: Build
-        working-directory: frontend
+        working-directory: ${{ steps.fe.outputs.dir }}
         run: yarn build
         env:
           CI: false
           REACT_APP_BACKEND_URL: ${{ secrets.REACT_APP_BACKEND_URL }}
 
+      - uses: actions/configure-pages@v5
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: frontend/build
+          path: ${{ steps.fe.outputs.dir }}/build
 
   deploy:
     needs: build

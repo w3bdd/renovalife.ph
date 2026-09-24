@@ -36,6 +36,12 @@ A full website concept for "RenovaLife Dialysis Center" — a fictional private,
 - VPS readiness: `python server.py` entrypoint (HOST/PORT env), backend/frontend `.env.example` files, full README with local dev, Pages, and VPS (uvicorn/nginx/TLS/CORS) instructions
 - Verified: `yarn build` passes (42s), build/index.html uses `./static/...` relative paths, backend restart + POST /api/enquiries OK, preview form submit OK
 
+## Implemented (session 3 — GitHub Pages deploy fix)
+- Root cause of failed Pages deploy: workflow assumed `frontend/yarn.lock` at a fixed path; user's repo layout didn't match, so setup-node's yarn cache step errored ("Some specified paths were not resolved")
+- Fix: workflow now auto-detects frontend location (`frontend/` subdir or repo root), dropped brittle cache/frozen-lockfile requirements, triggers on main AND master, added actions/configure-pages
+- Verified: local simulation of full CI (fresh copy → yarn install → yarn build) passes; YAML valid; detection logic tested against both layouts
+- Restored inline PerformanceServerTiming error-guard to index.html head (must register before the platform overlay; bundle-level was too late) — preview error resolved, console clean
+
 ## Verification Done
 - curl: /api/health OK; POST /api/enquiries 201 with id; GET /api/enquiries lists stored entries (incl. browser-submitted entry)
 - Screenshots: hero, services, facility, team, footer, FAQ open state, form submit with success toast — all pass; no app console errors
