@@ -94,3 +94,16 @@ logger = logging.getLogger(__name__)
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+
+
+# Direct-run entrypoint for self-hosted (VPS) deployments:
+#   python server.py            -> serves on 0.0.0.0:8001 (or $HOST / $PORT)
+# In this workspace the app is supervisor-managed and this block is unused.
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(
+        "server:app",
+        host=os.environ.get("HOST", "0.0.0.0"),
+        port=int(os.environ.get("PORT", "8001")),
+    )

@@ -5,7 +5,11 @@ import { CalendarCheck, Loader2, MapPin, Phone, Mail } from "lucide-react";
 import { Reveal, SectionHead } from "./Reveal";
 import { CONTACT, ENQUIRY_TYPES, SHIFTS } from "../lib/content";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+// On full-stack deployments (VPS / Emergent) REACT_APP_BACKEND_URL is set and the
+// form posts to the FastAPI backend. On static-only hosting (GitHub Pages without a
+// backend) it gracefully falls back to a pre-filled email to the center.
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = BACKEND_URL ? `${BACKEND_URL}/api` : null;
 
 const EMPTY = {
   name: "",
@@ -29,6 +33,29 @@ const AppointmentForm = () => {
   const submit = async (e) => {
     e.preventDefault();
     setSending(true);
+
+    if (!API) {
+      const subject = encodeURIComponent(`Appointment Request — ${form.name}`);
+      const body = encodeURIComponent(
+        [
+          `Name: ${form.name}`,
+          `Phone: ${form.phone}`,
+          `Email: ${form.email || "—"}`,
+          `Help needed with: ${form.enquiry_type}`,
+          `Preferred shift: ${form.shift_preference}`,
+          `Preferred date: ${form.preferred_date || "—"}`,
+          "",
+          form.message || "",
+        ].join("\n"),
+      );
+      window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
+      toast.info("Opening your email app…", {
+        description: "This deployment has no online backend, so your request will be sent by email instead.",
+      });
+      setSending(false);
+      return;
+    }
+
     try {
       const payload = { ...form };
       if (!payload.email) delete payload.email;

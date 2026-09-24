@@ -29,6 +29,13 @@ A full website concept for "RenovaLife Dialysis Center" — a fictional private,
 - Footer: emergency banner, contact/hours, quick links, fictional-concept disclaimer
 - Lenis momentum scrolling, grain overlay, custom fonts (Cormorant Garamond / Plus Jakarta Sans / JetBrains Mono)
 
+## Implemented (session 2 — deployment portability)
+- Contact form functional on GitHub Pages: REACT_APP_BACKEND_URL baked at build time → posts to VPS-hosted API; when unset (static-only), form falls back to a pre-filled email to the center
+- GitHub Pages readiness: `homepage: "."` in package.json (relative asset paths), `.github/workflows/deploy-pages.yml` (build + deploy via Actions, REACT_APP_BACKEND_URL as repo secret)
+- Platform decoupling: PostHog/emergent-main.js removed from index.html, injected at runtime only on Emergent-hosted domains; built HTML verified tracker-free
+- VPS readiness: `python server.py` entrypoint (HOST/PORT env), backend/frontend `.env.example` files, full README with local dev, Pages, and VPS (uvicorn/nginx/TLS/CORS) instructions
+- Verified: `yarn build` passes (42s), build/index.html uses `./static/...` relative paths, backend restart + POST /api/enquiries OK, preview form submit OK
+
 ## Verification Done
 - curl: /api/health OK; POST /api/enquiries 201 with id; GET /api/enquiries lists stored entries (incl. browser-submitted entry)
 - Screenshots: hero, services, facility, team, footer, FAQ open state, form submit with success toast — all pass; no app console errors
