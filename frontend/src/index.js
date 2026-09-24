@@ -12,18 +12,6 @@ const loadEmergentPlatformScripts = () => {
   const onEmergent = host.endsWith(".emergentagent.com") || host.endsWith("emergent.sh");
   if (!onEmergent) return;
 
-  window.addEventListener("error", (e) => {
-    if (
-      e.error instanceof DOMException &&
-      e.error.name === "DataCloneError" &&
-      e.message &&
-      e.message.includes("PerformanceServerTiming")
-    ) {
-      e.stopImmediatePropagation();
-      e.preventDefault();
-    }
-  }, true);
-
   const main = document.createElement("script");
   main.src = "https://assets.emergent.sh/scripts/emergent-main.js";
   main.async = true;
